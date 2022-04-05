@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <title>CRUD de Clientes</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>Editar Cliente</h1>
+    <form action="/clients/edit/:id" method="get">
+      <% docs.forEach(doc=> { console.log(doc.name); %>
+        <div class="container-row">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome">
+          <% //document.getElementById("nome").value=doc.name; %>
+          <script>
+            document.getElementById("nome").value = doc.name;
+          </script>
+        </div>
+        <div class="container-row">
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="telefone">
+        </div>
+        <div class="container-row">
+          <label for="uf">UF:</label>
+          <select id="uf" name="uf">
+            <option value="AC">AC</option>
+            <option value="AM">AM</option>
+            <option value="AP">AP</option>
+            <option value="PA">PA</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="TO">TO</option>
+          </select>
+        </div>
+        <div class="container-row">
+          <button type="submit">Editar</button>
+        </div>
+        <% }); %>
+    </form>
+  </div>
+</body>
+
+</html>

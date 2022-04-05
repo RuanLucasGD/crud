@@ -1,0 +1,98 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+table tbody tr:hover {background-color: lightgray;}
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+}
+
+table {
+  width: 70vw;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 24px;
+  border-radius: 2px;
+  border: none;
+  background-color: #008CBA;
+  transition-duration: 0.4s;
+  color: white;
+}
+
+button:hover {
+  background-color: #28b7e7;
+  cursor: pointer;
+}
+
+.btn-editar {
+  font-size: 10px;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: none;
+  background-color: rgb(241, 241, 190);
+  transition-duration: 0.4s;
+  color: black;
+}
+
+.btn-editar:hover {
+  background-color: lightyellow;
+}
+
+.btn-excluir {
+  font-size: 10px;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: none;
+  background-color: rgb(220, 130, 130);
+  transition-duration: 0.4s;
+  color: black;
+}
+
+.btn-excluir:hover {
+  background-color: rgb(250, 185, 185);
+}
+
+table tr td:last-child{
+  width:10vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 10px;
+  align-items: baseline ;
+}
+
+.container-row > label {
+  flex: 1;
+  padding: 0px 5px 0px 5px;
+}
+
+.container-row > input {
+  flex: 5;
+}
+
+.container-row > select {
+  flex: 5;
+}
+
+form {
+  width: 45vw;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>CRUD de Clientes</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Clientes</h1>
+        <% if (userAdded){ %>
+            <h2>Usuario adicionado</h2>
+            <% } %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>UF</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <% docs.forEach(doc=> { %>
+
+                            <tr>
+                                <td>
+                                    <%= doc.name %>
+                                </td>
+                                <td>
+                                    <%= doc.telephone%>
+                                </td>
+                                <td>
+                                    <%= doc.uf%>
+                                </td>
+                                <td>
+                                    <a href="clients/edit/${docs._id}">
+                                        <button class="btn-editar">Editar</button>
+                                    </a>
+                                    <button class="btn-excluir">Excluir</button>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"><a href="/add"><button type="button">Novo</button></a></td>
+                        </tr>
+                    </tfoot>
+                </table>
+    </div>
+</body>
+
+</html>
