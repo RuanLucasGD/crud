@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>CRUD de Clientes</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <!-- <script src="script.js"></script> -->
+    <script src="/js/script.js"></script>
 </head>
 
 <body>
@@ -24,31 +24,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        <% docs.forEach(doc=> { %>
-
-                            <tr>
-                                <td>
-                                    <%= doc.name %>
-                                </td>
-                                <td>
-                                    <%= doc.telephone%>
-                                </td>
-                                <td>
-                                    <%= doc.uf%>
-                                </td>
-                                <td>
-                                    <a href="clients/edit/${docs._id}">
-                                        <button class="btn-editar">Editar</button>
-                                    </a>
-                                    <button class="btn-excluir">Excluir</button>
-                                </td>
-                            </tr>
-                            <% }); %>
+                        <form method="post">
+                            <% docs.forEach(doc=> { %>
+                                <tr>
+                                    <td>
+                                        <%= doc.name %>
+                                    </td>
+                                    <td>
+                                        <%= doc.telephone%>
+                                    </td>
+                                    <td>
+                                        <%= doc.uf%>
+                                    </td>
+                                    <td>
+                                        <button type="submit" onclick="setHiddenId('<%= doc._id %>')"
+                                            formaction="/clients/update" class="btn-editar">Editar</button>
+                                        <button type="submit" onclick="setHiddenId('<%= doc._id %>')"
+                                            formaction="/clients/delete" class="btn-excluir">Excluir</button>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <input type="hidden" id="hiddenId" name="hiddenId">
+                        </form>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4"><a href="/add"><button type="button">Novo</button></a></td>
+                            <td colspan="4"><a href="/clients/add"><button type="button">Novo</button></a></td>
                         </tr>
                     </tfoot>
                 </table>

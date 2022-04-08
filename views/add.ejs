@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <title>CRUD de Clientes</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <!-- <script src="script.js"></script> -->
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <meta charset="utf-8">
+  <title>CRUD de Clientes</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
     <h1>Adicionar Novo Cliente</h1>
     <form action="/clients" method="post">
-        <div class="container-row">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-        </div>
-        <div class="container-row">
-            <label for="telefone">Telefone:</label>
+      <div class="container-row">
+        <label for="nome">Nome:</label>
+        <% if (obj) { %>
+          <input type="text" id="nome" value="<%= obj.name %>" name="nome">
+        <% } else { %>
+          <input type="text" id="nome" name="nome">
+        <% } %>
+      </div>
+      <div class="container-row">
+        <label for="telefone">Telefone:</label>
+        <% if (obj) { %>
+          <input type="text" id="telefone" value="<%= obj.telephone %>" name="telefone">
+        <% } else { %>
             <input type="text" id="telefone" name="telefone">
-        </div>
-        <div class="container-row">
-            <label for="uf">UF:</label>
-            <select id="uf" name="uf">
-                <option value="AC">AC</option>
-                <option value="AM">AM</option>
-                <option value="AP">AP</option>
-                <option value="PA">PA</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="TO">TO</option>
-            </select>
-        </div>
-        <div class="container-row">
-            <button type="submit">Cadastrar</button>
-        </div>
+        <% } %>
+      </div>
+      <div class="container-row">
+        <label for="uf">UF:</label>
+        <select id="uf" name="uf">
+          <option value="AC" <% if (obj.uf == 'AC') {%> <%= %> selected <% } %> >AC</option>
+          <option value="AM" <% if (obj.uf == 'AM') {%> <%= %> selected <% } %> >AM</option>
+          <option value="AP" <% if (obj.uf == 'AP') {%> <%= %> selected <% } %> >AP</option>
+          <option value="PA" <% if (obj.uf == 'PA') {%> <%= %> selected <% } %> >PA</option>
+          <option value="RO" <% if (obj.uf == 'RO') {%> <%= %> selected <% } %> >RO</option>
+          <option value="RR" <% if (obj.uf == 'RR') {%> <%= %> selected <% } %> >RR</option>
+          <option value="TO" <% if (obj.uf == 'TO') {%> <%= %> selected <% } %> >TO</option>
+        </select>
+      </div>
+      <div class="container-row">
+        <button type="submit"> <%= label %></button>
+      </div>
+      <% if (obj) {%>
+        <input type="hidden" id="hiddenId" name="hiddenId" value="<%= obj._id %>">
+      <% } %>
     </form>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
