@@ -3,24 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CRUD de Clientes</title>
+    <title>Gerenciamento de vendas</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="/js/script.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Lista de Clientes</h1>
-        <% if (userAdded){ %>
-            <h2>Usuario adicionado</h2>
+        <h1>Lista de vendas</h1>
+        <% if (vehicleAdded){ %>
+            <h2>Veiculo vendido</h2>
             <% } %>
                 <table>
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Telefone</th>
-                            <th>UF</th>
-                            <th>Ações</th>
+                            <th>Valor</th>
+                            <th>Marca</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,16 +30,16 @@
                                         <%= doc.name %>
                                     </td>
                                     <td>
-                                        <%= doc.telephone%>
+                                        <%= doc.value%>
                                     </td>
                                     <td>
-                                        <%= doc.uf%>
+                                        <%= doc.brand%>
                                     </td>
                                     <td>
                                         <button type="submit" onclick="setHiddenId('<%= doc._id %>')"
-                                            formaction="/clients/update" class="btn-editar">Editar</button>
+                                            formaction="/vehicles/update" class="btn-editar">Editar</button>
                                         <button type="submit" onclick="setHiddenId('<%= doc._id %>')"
-                                            formaction="/clients/delete" class="btn-excluir">Excluir</button>
+                                            formaction="/vehicles/delete" class="btn-excluir">Excluir</button>
                                     </td>
                                 </tr>
                                 <% }); %>
@@ -49,7 +48,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4"><a href="/clients/add"><button type="button">Novo</button></a></td>
+                            <td colspan="4"><a href="/vehicles/add"><button type="button">Novo</button></a></td>
                         </tr>
                     </tfoot>
                 </table>

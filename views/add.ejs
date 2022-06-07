@@ -10,34 +10,31 @@
 
 <body>
   <div class="container">
-    <h1>Adicionar Novo Cliente</h1>
-    <form action="/clients" method="post">
+    <h1>Adicionar nova venda</h1>
+    <form action="/vehicles" method="post">
       <div class="container-row">
-        <label for="nome">Nome:</label>
+        <label for="name">Nome:</label>
         <% if (obj) { %>
-          <input type="text" id="nome" value="<%= obj.name %>" name="nome">
+          <input type="text" id="name" value="<%= obj.name %>" name="name">
         <% } else { %>
-          <input type="text" id="nome" name="nome">
+          <input type="text" id="name" name="name">
         <% } %>
       </div>
       <div class="container-row">
-        <label for="telefone">Telefone:</label>
+        <label for="value">Valor:</label>
         <% if (obj) { %>
-          <input type="text" id="telefone" value="<%= obj.telephone %>" name="telefone">
+          <input type="text" id="value" value="<%= obj.value %>" name="value">
         <% } else { %>
-            <input type="text" id="telefone" name="telefone">
+            <input type="text" id="value" name="value">
         <% } %>
       </div>
       <div class="container-row">
-        <label for="uf">UF:</label>
-        <select id="uf" name="uf">
-          <option value="AC" <% if (obj.uf == 'AC') {%> <%= %> selected <% } %> >AC</option>
-          <option value="AM" <% if (obj.uf == 'AM') {%> <%= %> selected <% } %> >AM</option>
-          <option value="AP" <% if (obj.uf == 'AP') {%> <%= %> selected <% } %> >AP</option>
-          <option value="PA" <% if (obj.uf == 'PA') {%> <%= %> selected <% } %> >PA</option>
-          <option value="RO" <% if (obj.uf == 'RO') {%> <%= %> selected <% } %> >RO</option>
-          <option value="RR" <% if (obj.uf == 'RR') {%> <%= %> selected <% } %> >RR</option>
-          <option value="TO" <% if (obj.uf == 'TO') {%> <%= %> selected <% } %> >TO</option>
+        <label for="brand">Marca:</label>
+        <select id="brand" name="brand">
+          <option value="Fiat" <% if (obj.brand == 'Fiat') {%> <%= %> selected <% } %> >Fiat</option>
+          <option value="Volvo" <% if (obj.brand == 'Volvo') {%> <%= %> selected <% } %> >Volvo</option>
+          <option value="Mercedes" <% if (obj.brand == 'Mercedes') {%> <%= %> selected <% } %> >Mercedes</option>
+          <option value="Missan" <% if (obj.brand == 'Missan') {%> <%= %> selected <% } %> >Missan</option>
         </select>
       </div>
       <div class="container-row">

@@ -17,6 +17,7 @@ async function connect() {
 
     else {
         console.log("Conectado");
+
     }
 
     global.db = conn.db("mydb");
