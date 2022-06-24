@@ -5,8 +5,6 @@ var ObjectID = require("mongodb").ObjectId;
 
 const db = require('../db');
 
-console.log(md5(123));
-
 router.post('/drop', async function (req, res, next) {
 
     const conn = await db.connect();
